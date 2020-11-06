@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Showroom Dropdown</title>
+
+<script>
+function selectYourChoice(){
+arraylap = 'Lenovo~Sony~Hp~Dell~Acer';
+laptemp = arraylap.split('~').join(" <br> ");
+arraytv = 'Samsung~Sony~LG~MI tv';
+tvtemp = arraytv.split('~').join(" <br> ");
+arrayph = 'iphone~samsung~sony~realme~redmi';
+phtemp = arrayph.split('~').join(" <br> ");
+var sel = document.getElementById("device");
+ 
+if(sel.value == 'Laptop'){
+document.getElementById("mydiv").innerHTML=laptemp;
+ }else if(sel.value == 'TV'){
+document.getElementById("mydiv").innerHTML=tvtemp;
+ }else if(sel.value == 'Mobile'){
+document.getElementById("mydiv").innerHTML=phtemp;
+ }else{
+document.getElementById("mydiv").innerHTML="";
+ }
+ }
+</script>
+</head>
+
+<body>
+ <h3 style="color: blueviolet;">Select Your Choice</h3>
+<select style="color: cadetblue;" name="device" id="device" onclick="selectYourChoice()">
+<option  value="select">***select***</option>
+<option style="color: red;"value="Laptop">Laptop</option>
+<option style="color: red;"value="TV">TV</option>
+<option style="color: red;"value="Mobile">Mobile</option>
+</select>
+<div style="background-color: yellow;" id="mydiv"></div>
+</body>
+</html>
